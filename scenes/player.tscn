@@ -1,3 +1,63 @@
 [gd_scene format=3 uid="uid://8ht3ssrc8sq0"]
 
-[node name="Node2D" type="Node2D" unique_id=1723508768]
+[ext_resource type="Texture2D" uid="uid://cl6sa7h131e76" path="res://assets/sprite sheet done.png" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://c8gs81yhwfenu" path="res://assets/run.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://l0pxu2aoug10" path="res://assets/WORKING ATTACK.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("1_g2els")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("1_g2els")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
+# ... rest of your SpriteFrames data ...
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_52x2u"]
+height = 50.0
+
+[node name="player" type="Node2D" unique_id=840851724]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=556635437]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1944498914]
+sprite_frames = SubResource("SpriteFrames_u8vuu")
+animation = &"new_animation"
+
+[node name="body" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1545938779]
+position = Vector2(-3, 6)
+shape = SubResource("CapsuleShape2D_52x2u")
