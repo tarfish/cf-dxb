@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://8ht3ssrc8sq0"]
 
+[ext_resource type="Script" uid="uid://4tfgv5sr75k2" path="res://scripts/character_body_2d.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cl6sa7h131e76" path="res://assets/sprite sheet done.png" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://c8gs81yhwfenu" path="res://assets/run.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://l0pxu2aoug10" path="res://assets/WORKING ATTACK.png" id="3_qhqgy"]
@@ -53,6 +54,7 @@ height = 50.0
 [node name="player" type="Node2D" unique_id=840851724]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=556635437]
+script = ExtResource("1_dqkch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1944498914]
 sprite_frames = SubResource("SpriteFrames_u8vuu")
