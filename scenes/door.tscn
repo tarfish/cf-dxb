@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://mldkaf7fonro"]
+
+[ext_resource type="Texture2D" uid="uid://cawdggn2ermeu" path="res://assets/DOORAAAA.png" id="1_hpvv5"]
+[ext_resource type="Script" uid="uid://ubd7t75ogl7h" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://ds02qqcmgmrsa" path="res://scenes/Sprite-0001.png" id="3_83dcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3a6h7"]
+size = Vector2(96, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvdjg"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83dcw"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la1wf"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18pbm"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5w8r"]
+atlas = ExtResource("1_hpvv5")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3a6h7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvdjg")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83dcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la1wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18pbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5w8r")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 3.0
+}]
+
+[node name="door" type="Node2D" unique_id=1867058406]
+script = ExtResource("1_uvdjg")
+
+[node name="detect player" type="Area2D" parent="." unique_id=1661160225]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect player" unique_id=2040356916]
+position = Vector2(-79, 0)
+shape = SubResource("RectangleShape2D_3a6h7")
+
+[node name="teleport player" type="Area2D" parent="." unique_id=834194846]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport player" unique_id=660434282]
+position = Vector2(67, 1)
+shape = SubResource("RectangleShape2D_3a6h7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1021197593]
+z_index = -4
+sprite_frames = SubResource("SpriteFrames_3a6h7")
+animation = &"open"
+autoplay = "close"
+frame = 3
+frame_progress = 1.0
+
+[node name="Dooraaaa" type="Sprite2D" parent="." unique_id=1359332361]
+z_index = 5
+position = Vector2(14, 1)
+texture = ExtResource("1_hpvv5")
+region_enabled = true
+region_rect = Rect2(221.16162, 1.2267284, 35.201843, 96)
+
+[node name="Sprite0001" type="Sprite2D" parent="." unique_id=496857587]
+z_index = 10
+position = Vector2(165, 0)
+texture = ExtResource("3_83dcw")
+
+[connection signal="body_entered" from="detect player" to="." method="_on_detect_player_body_entered"]
+[connection signal="body_entered" from="teleport player" to="." method="_on_teleport_player_body_entered"]

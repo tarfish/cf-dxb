@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfjfdfuxkmitw"
+path="res://.godot/imported/idk (1).mp3-4e7adc4815647975e0961b6f9a46bbf1.mp3str"
+
+[deps]
+
+source_file="res://assets/idk (1).mp3"
+dest_files=["res://.godot/imported/idk (1).mp3-4e7adc4815647975e0961b6f9a46bbf1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
